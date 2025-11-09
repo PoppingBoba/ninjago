@@ -28,7 +28,7 @@ type NinjaGoInterface interface {
 	toString() string
 }
 
-func (n NinjaGoRuleBase) toString() string {
+func (n NinjaGoRuleBase) String() string {
 	var ret = ""
 
 	ret += fmt.Sprintf("rule %v\n", n.Name)
