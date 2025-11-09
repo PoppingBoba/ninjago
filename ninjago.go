@@ -14,6 +14,16 @@ type NinjaGoRuleBase struct {
 	Name string
 }
 
+func MakeNinjaGoRule(name string, cmd string, desc string) *NinjaGoRuleBase {
+	return &NinjaGoRuleBase{
+		NinjaGoBody: NinjaGoBody{
+			Cmd:  cmd,
+			Desc: desc,
+		},
+		Name: name,
+	}
+}
+
 type NinjaGoInterface interface {
 	toString() string
 }
@@ -22,8 +32,8 @@ func (n NinjaGoRuleBase) toString() string {
 	var ret = ""
 
 	ret += fmt.Sprintf("rule %v\n", n.Name)
-	ret += fmt.Sprintf("	command = %v", n.Cmd)
-	ret += fmt.Sprintf("	description = %v", n.Desc)
+	ret += fmt.Sprintf("	command = %v\n", n.Cmd)
+	ret += fmt.Sprintf("	description = %v\n", n.Desc)
 
 	return ret
 }
