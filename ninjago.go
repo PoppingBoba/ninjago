@@ -25,7 +25,7 @@ func MakeNinjaGoRule(name string, cmd string, desc string) *NinjaGoRuleBase {
 }
 
 type NinjaGoInterface interface {
-	toString() string
+	String() string
 }
 
 func (n NinjaGoRuleBase) String() string {
